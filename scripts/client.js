@@ -1,5 +1,8 @@
 $( document ).ready( onReady );
 
+//globals
+let employees = [];
+
 function addEmployee(){
     console.log( 'in addEmployee ');
     // get user input & place into a new object
@@ -12,6 +15,7 @@ function addEmployee(){
         annualSalary: $( '#annualSalaryIn ').val(),
     } // end new employee
     // push the new object into our array
+    employees.push( newEmployee )
     // display inventory
 } // end addEmployee
 

@@ -1,9 +1,9 @@
 [x] interface for input and JQ sourced
 [x] capture click event and get user input:
-[ ] collect employee f & l name, ID number, job title, annual salary
-[ ] submit button
-[ ] collect form info
-[ ] store form info
+[x] collect employee f & l name, ID number, job title, annual salary
+[x] submit button
+[x] collect form info
+[x] store form info
 [ ] calculate monthly costs
 [ ] append info to DOM
 [ ] clear input fields
