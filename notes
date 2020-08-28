@@ -1,0 +1,13 @@
+[ ] interface for input and JQ sources
+[ ] capture click event and get user input:
+[ ] collect employee f & l name, ID number, job title, annual salary
+[ ] submit button
+[ ] collect form info
+[ ] store form info
+[ ] calculate monthly costs
+[ ] append info to DOM
+[ ] clear input fields
+[ ] calculate monthly costs
+[ ] append to DOM
+[ ] if monthly costs > 20k, add red background color to total monthly costs
+[ ] delete button to remove employee from DOM (does not need to remove salary from total)
