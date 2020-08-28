@@ -15,12 +15,53 @@ function addEmployee(){
         annualSalary: $( '#annualSalaryIn ').val(),
     } // end new employee
     // push the new object into our array
-    employees.push( newEmployee )
+    employees.push( newEmployee );
+    emptyInputs();
+    calculateTotalCosts();
     // display inventory
 } // end addEmployee
+
+function calculateTotalCosts(){
+    console.log('in calculateTotalCosts')
+    //calculate total monthly costs
+    let totalPrices = 0;
+    for (let i = 0; i < employees.length; i++){
+        //for each employee salary, add up total of all costs
+        totalPrices += Number(employees[i].annualSalary);
+    } // end for
+    let el = $( '#totalMonthly' );
+    el.empty();
+    el.append(totalPrices);
+    // display employees in DOM
+    displayEmployees();
+} // end calculateTotalCosts
+
+function displayEmployees(){
+    console.log( 'in displayEmployees');
+    // target an ul element on DOM
+    let el = $( '#employeesOut' );
+    // empty el
+    el.empty();
+    // loop through employees
+    for (let i=0; i<employees.length; i++){
+    // append each item to the ul
+        el.append( `<li> ${ employees[i].firstName }</li>`);
+    } // end for
+} // end displayEmployees
+
+
+function emptyInputs(){
+    console.log('in emptyInputs')
+    $('#firstNameIn').val('');
+    $('#lastNameIn').val('');
+    $('#idIn').val('');
+    $('#jobTitleIn').val('');
+    $('#annualSalaryIn').val('');
+}
 
 function onReady(){
     // capture click event on element with "addEmployeeButton"
     $( '#addEmployeeButton' ).on( 'click', addEmployee );
 }
+
 

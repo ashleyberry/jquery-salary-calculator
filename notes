@@ -4,7 +4,7 @@
 [x] submit button
 [x] collect form info
 [x] store form info
-[ ] calculate monthly costs
+[x] calculate monthly costs
 [ ] append info to DOM
 [ ] clear input fields
 [ ] calculate monthly costs
