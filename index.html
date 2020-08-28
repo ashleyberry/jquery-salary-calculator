@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weekend Challenge: jQuery Salary Calculator</title>
+    <link rel="stylesheet" type="text/css" href='style.css'>
     <script src='scripts/jquery-3.5.1.min.js'></script> 
     <script src='scripts/client.js'></script>
 
@@ -18,8 +19,35 @@
     <input type="text" id="annualSalaryIn" placeholder="Annual Salary">
     <button id="addEmployeeButton">Submit</button>
     <h2>Employees</h2>
-    <ul id='employeesOut'>
-    </ul>
+    <table id='employeesList' style='width:100%'>
+        <div class='table'>
+        <tr> 
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Annual Salary</th>
+        </tr>
+        <tr id='employeesOut'>
+        </tr>
+        <!-- 
+        <tr>
+            <td>Jill</td>
+            <td>Smith</td>
+            <td>3452</td>
+            <td>The boss</td>
+            <td>345278</td>
+        </tr>
+        <tr>
+            <td>Eve</td>
+            <td>Jackson</td>
+            <td>9674</td>
+            <td>Assistant Boss</td>
+            <td>12345</td>
+        </tr>
+        -->
+    </table>
+</div>
     <h2>Total Monthly: $<span id="totalMonthly"></span></h2>
 </body>
 </html>

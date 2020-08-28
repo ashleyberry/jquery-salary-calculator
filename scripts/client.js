@@ -38,14 +38,21 @@ function calculateTotalCosts(){
 
 function displayEmployees(){
     console.log( 'in displayEmployees');
-    // target an ul element on DOM
+    // target an tr element on DOM
     let el = $( '#employeesOut' );
     // empty el
     el.empty();
     // loop through employees
     for (let i=0; i<employees.length; i++){
-    // append each item to the ul
-        el.append( `<li> ${ employees[i].firstName }</li>`);
+    // append each item to the table
+        el.append( `
+        <td> ${ employees[i].firstName } </td>
+        <td> ${ employees[i].lastName } </td>
+        <td> ${ employees[i].id } </td>
+        <td> ${ employees[i].jobTitle } </td>
+        <td> ${ employees[i].annualSalary } </td>
+        `
+        );
     } // end for
 } // end displayEmployees
 
