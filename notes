@@ -1,5 +1,5 @@
-[ ] interface for input and JQ sources
-[ ] capture click event and get user input:
+[x] interface for input and JQ sourced
+[x] capture click event and get user input:
 [ ] collect employee f & l name, ID number, job title, annual salary
 [ ] submit button
 [ ] collect form info

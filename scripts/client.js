@@ -1,5 +1,22 @@
 $( document ).ready( onReady );
 
+function addEmployee(){
+    console.log( 'in addEmployee ');
+    // get user input & place into a new object
+    const newEmployee = {
+    // values come from input fields 
+        firstName: $( '#firstNameIn ').val(),
+        lastName: $( '#lastNameIn ').val(),
+        id: $( '#idIn ').val(),
+        jobTitle: $( '#jobTitleIn ').val(),
+        annualSalary: $( '#annualSalaryIn ').val(),
+    } // end new employee
+    // push the new object into our array
+    // display inventory
+} // end addEmployee
+
 function onReady(){
-    console.log('JQ is go')
+    // capture click event on element with "addEmployeeButton"
+    $( '#addEmployeeButton' ).on( 'click', addEmployee );
 }
+
