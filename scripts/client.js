@@ -16,6 +16,14 @@ function addEmployee(){
     } // end new employee
     // push the new object into our array
     employees.push( newEmployee );
+    $('#employeesList').append(`<tr>
+    <td>${newEmployee.firstName}</td>
+    <td>${newEmployee.lastName}</td>
+    <td>${newEmployee.id}</td>
+    <td>${newEmployee.jobTitle}</td>
+    <td>${newEmployee.annualSalary}</td>
+    </tr>
+    `)
     emptyInputs();
     calculateTotalCosts();
     // display inventory
@@ -32,29 +40,7 @@ function calculateTotalCosts(){
     let el = $( '#totalMonthly' );
     el.empty();
     el.append(totalPrices);
-    // display employees in DOM
-    displayEmployees();
 } // end calculateTotalCosts
-
-function displayEmployees(){
-    console.log( 'in displayEmployees');
-    // target an tr element on DOM
-    let el = $( '#employeesOut' );
-    // empty el
-    el.empty();
-    // loop through employees
-    for (let i=0; i<employees.length; i++){
-    // append each item to the table
-        el.append( `
-        <td> ${ employees[i].firstName } </td>
-        <td> ${ employees[i].lastName } </td>
-        <td> ${ employees[i].id } </td>
-        <td> ${ employees[i].jobTitle } </td>
-        <td> ${ employees[i].annualSalary } </td>
-        `
-        );
-    } // end for
-} // end displayEmployees
 
 
 function emptyInputs(){
