@@ -11,3 +11,8 @@
 [x] append to DOM
 [x] if monthly costs > 20k, add red background color to total monthly costs
 [x] delete button to remove employee from DOM (does not need to remove salary from total)
+
+Stretch goals
+[ ] add styling
+[ ] add extra functionality
+[ ] remove employee's salary from total 
