@@ -34,6 +34,7 @@ let employees = [
 ];
 let monthlyTotal = 0;
 
+
 function addEmployee(){
     console.log( 'in addEmployee ');
     // get user input & place into a new object
@@ -52,7 +53,7 @@ function addEmployee(){
     <td>${newEmployee.lastName}</td>
     <td>${newEmployee.id}</td>
     <td>${newEmployee.jobTitle}</td>
-    <td>${newEmployee.annualSalary}</td>
+    <td class='annualSalary'>${newEmployee.annualSalary}</td>
     <td><button class='removeEmployeeBtn'>Delete</button></td>
     </tr>
     `)
@@ -95,7 +96,7 @@ function displayEmployees(){
         <td>${ employees[i].lastName }</td>
         <td>${ employees[i].id }</td>
         <td>${ employees[i].jobTitle }</td>
-        <td>${ employees[i].annualSalary }</td>
+        <td class='annualSalary'>${ employees[i].annualSalary }</td>
         <td><button class='removeEmployeeBtn'>Delete</button></td></tr>
         ` );
     } // end for
@@ -114,20 +115,21 @@ function emptyInputs(){
 function onReady(){
     // capture click event on element with "addEmployeeButton"
     $( '#addEmployeeButton' ).on( 'click', addEmployee );
-    $(document).on('click', '.removeEmployeeBtn', onRemove);
+    $( document ).on( 'click', '.removeEmployeeBtn', onRemove );
     displayEmployees();
 } // end onReady
 
 function onRemove(){
     console.log('in onRemove')
-    subtractEmployeeSalaryFromTotal();
     $(this).closest('tr').remove();
 } // end onRemove
 
+
 function subtractEmployeeSalaryFromTotal(){
     console.log('in subtractEmployeeSalaryFromTotal');
-    //target this employee's salary
-    console.log()
+    //target this employee's salary  
+    //let el = $(this).closest('td')
+    //let employeeSalary = $(this).data()
     //subtract from monthly total
     //monthlyTotal -= (employeeSalary / 12)
 } // end subtractEmployeeSalaryFromTotal

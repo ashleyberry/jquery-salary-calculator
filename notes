@@ -13,6 +13,6 @@
 [x] delete button to remove employee from DOM (does not need to remove salary from total)
 
 Stretch goals
-[ ] add styling
+[x] add styling
 [ ] add extra functionality
 [ ] remove employee's salary from total 

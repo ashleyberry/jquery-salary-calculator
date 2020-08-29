@@ -1,0 +1,40 @@
+#employeesList {
+    border: solid black 3px;
+}
+
+.employeesOut {
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
+.headerImage {
+    text-align: center;
+}
+
+#headerList {
+    background: white
+}
+
+.red {
+    background: red;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td {
+    text-align: center;
+    border: solid black 1px;
+    border-right: solid black 2px;
+}
+
+th {
+    border: solid black 2px;
+}
+
+tr:nth-child(odd) {
+    background: #ccc
+}
