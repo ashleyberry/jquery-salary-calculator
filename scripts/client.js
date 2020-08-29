@@ -8,6 +8,28 @@ let employees = [
         id: '13',
         jobTitle: 'Deputy Director',
         annualSalary: 46931
+    },
+
+    {
+        firstName: 'Ron',
+        lastName: 'Swanson',
+        id: '27',
+        jobTitle: 'Director',
+        annualSalary: 60425
+    },
+    {
+        firstName: 'Donna',
+        lastName: 'Meagle',
+        id: '87',
+        jobTitle: 'Office Manager',
+        annualSalary: 79458
+    },
+    {
+        firstName: 'Chris',
+        lastName: 'Traeger',
+        id: '344',
+        jobTitle: 'City Manager',
+        annualSalary: 92183
     }
 ];
 let monthlyTotal = 0;
@@ -77,24 +99,27 @@ function onReady(){
 function onRemove(){
     console.log('in onRemove')
     $(this).closest('tr').remove();
+    //target monthly total
+    //subtract this employee's salary
 };
 
 
 function displayEmployees(){
     console.log( 'in displayEmployees' );
-    // target a tr element on DOM
-    let el = $( '#employeesOut' );
+    // target a tbody element on DOM
+    let el = $( '.employeesOut' );
     // empty el
     el.empty();
     // loop through inventory
     for( let i=0; i<employees.length; i++ ){
-        // append each item to the ul 
-        el.append( `
+        // append each item to the tbody 
+        el.append( `<tr>
         <td>${ employees[i].firstName }</td>
         <td>${ employees[i].lastName }</td>
         <td>${ employees[i].id }</td>
         <td>${ employees[i].jobTitle }</td>
         <td>${ employees[i].annualSalary }</td>
+        <td><button class='removeEmployeeBtn'>Delete</button></td></tr>
         ` );
     } // end for
     calculateTotalCosts();
