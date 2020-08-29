@@ -1,5 +1,11 @@
 td {
     text-align: center;
+    border: solid black 1px;
+    border-right: solid black 2px;
+}
+
+th {
+    border: solid black 2px;
 }
 
 .red {
@@ -9,3 +15,17 @@ td {
 .employeesOut {
     text-align: center;
 }
+
+#employeesList {
+    border: solid black 3px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+.removeEmployeeBtn {
+
+}
+
+tr:nth-child(odd) {background: #FFF}

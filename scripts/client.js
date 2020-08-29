@@ -120,7 +120,14 @@ function onReady(){
 
 function onRemove(){
     console.log('in onRemove')
+    subtractEmployeeSalaryFromTotal();
     $(this).closest('tr').remove();
-    //target monthly total
-    //subtract this employee's salary
 } // end onRemove
+
+function subtractEmployeeSalaryFromTotal(){
+    console.log('in subtractEmployeeSalaryFromTotal');
+    //target this employee's salary
+    console.log()
+    //subtract from monthly total
+    //monthlyTotal -= (employeeSalary / 12)
+} // end subtractEmployeeSalaryFromTotal
