@@ -2,6 +2,7 @@ $( document ).ready( onReady );
 
 //globals
 let employees = [];
+let monthlyTotal = 0;
 
 function addEmployee(){
     console.log( 'in addEmployee ');
@@ -26,22 +27,28 @@ function addEmployee(){
     `)
     emptyInputs();
     calculateTotalCosts();
-    // display inventory
 } // end addEmployee
+
 
 function calculateTotalCosts(){
     console.log('in calculateTotalCosts')
     //calculate total monthly costs
-    let totalPrices = 0;
     for (let i = 0; i < employees.length; i++){
         //for each employee salary, add up total of all costs
-        totalPrices += Number(employees[i].annualSalary);
+        monthlyTotal += Number(employees[i].annualSalary);
     } // end for
     let el = $( '#totalMonthly' );
     el.empty();
-    el.append(totalPrices);
+    el.append(monthlyTotal);
+    checkTotal();
 } // end calculateTotalCosts
 
+function checkTotal(){
+    console.log('in check total');
+    if (monthlyTotal > 20000){
+        $('#totalMonthly').addClass('red');
+    }
+} // end checkTotal
 
 function emptyInputs(){
     console.log('in emptyInputs')
