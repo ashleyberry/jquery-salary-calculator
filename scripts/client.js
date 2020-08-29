@@ -34,7 +34,6 @@ let employees = [
 ];
 let monthlyTotal = 0;
 
-
 function addEmployee(){
     console.log( 'in addEmployee ');
     // get user input & place into a new object
@@ -57,6 +56,7 @@ function addEmployee(){
     <td><button class='removeEmployeeBtn'>Delete</button></td>
     </tr>
     `)
+    setEmployeeAnnualSalaryData();
     emptyInputs();
     calculateTotalCosts();
 } // end addEmployee
@@ -100,6 +100,7 @@ function displayEmployees(){
         <td><button class='removeEmployeeBtn'>Delete</button></td></tr>
         ` );
     } // end for
+    //setEmployeeAnnualSalaryData();
     calculateTotalCosts();
 } // end displayEmployees
 
@@ -121,15 +122,22 @@ function onReady(){
 
 function onRemove(){
     console.log('in onRemove')
+    subtractEmployeeSalaryFromTotal();
     $(this).closest('tr').remove();
 } // end onRemove
 
+function setEmployeeAnnualSalaryData(){
+    console.log('in getEmployeeAnnualSalaryData');
+    // Here data is setting the data td element
+    // let annualSalary = $(".annualSalary").data("annualEmployeeSalary", newEmployee.annualSalary)
+    // console.log(`annualSalary:`, annualSalary)
+   // subtractEmployeeSalaryFromTotal();
+} // end getEmployeeAnnualSalaryData
+
 
 function subtractEmployeeSalaryFromTotal(){
-    console.log('in subtractEmployeeSalaryFromTotal');
-    //target this employee's salary  
-    //let el = $(this).closest('td')
-    //let employeeSalary = $(this).data()
-    //subtract from monthly total
+    console.log('in subtractEmployeeSalaryFromTotal'); 
+    // target/GET THIS employee data 
+    //subtract emplyoee salary from monthly total
     //monthlyTotal -= (employeeSalary / 12)
 } // end subtractEmployeeSalaryFromTotal
