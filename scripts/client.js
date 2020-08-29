@@ -17,18 +17,18 @@ function addEmployee(){
     } // end new employee
     // push the new object into our array
     employees.push( newEmployee );
-    $('#employeesList').append(`<tr>
+    $('#employeesList').append(`<tr class= latestEmployee>
     <td>${newEmployee.firstName}</td>
     <td>${newEmployee.lastName}</td>
     <td>${newEmployee.id}</td>
     <td>${newEmployee.jobTitle}</td>
     <td>${newEmployee.annualSalary}</td>
+    <td><button class='removeEmployeeBtn'>Delete</button></td>
     </tr>
     `)
     emptyInputs();
     calculateTotalCosts();
 } // end addEmployee
-
 
 function calculateTotalCosts(){
     console.log('in calculateTotalCosts')
@@ -62,6 +62,10 @@ function emptyInputs(){
 function onReady(){
     // capture click event on element with "addEmployeeButton"
     $( '#addEmployeeButton' ).on( 'click', addEmployee );
+    $(document).on('click', '.removeEmployeeBtn', onRemove);
 }
 
-
+function onRemove(){
+    console.log('in onRemove')
+    $(this).closest('tr').remove();
+};

@@ -10,4 +10,4 @@
 [x] calculate monthly costs
 [x] append to DOM
 [x] if monthly costs > 20k, add red background color to total monthly costs
-[ ] delete button to remove employee from DOM (does not need to remove salary from total)
+[x] delete button to remove employee from DOM (does not need to remove salary from total)
