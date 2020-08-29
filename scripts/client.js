@@ -1,7 +1,15 @@
 $( document ).ready( onReady );
 
 //globals
-let employees = [];
+let employees = [
+    {
+        firstName: 'Leslie',
+        lastName: 'Knope',
+        id: '13',
+        jobTitle: 'Deputy Director',
+        annualSalary: 46931
+    }
+];
 let monthlyTotal = 0;
 
 function addEmployee(){
@@ -17,7 +25,7 @@ function addEmployee(){
     } // end new employee
     // push the new object into our array
     employees.push( newEmployee );
-    $('#employeesList').append(`<tr class= latestEmployee>
+    $('#employeesList').append(`<tr>
     <td>${newEmployee.firstName}</td>
     <td>${newEmployee.lastName}</td>
     <td>${newEmployee.id}</td>
@@ -35,7 +43,7 @@ function calculateTotalCosts(){
     //calculate total monthly costs
     for (let i = 0; i < employees.length; i++){
         //for each employee salary, add up total of all costs
-        monthlyTotal += Number(employees[i].annualSalary);
+        monthlyTotal += Math.round((Number(employees[i].annualSalary)) / 12);
     } // end for
     let el = $( '#totalMonthly' );
     el.empty();
@@ -63,9 +71,31 @@ function onReady(){
     // capture click event on element with "addEmployeeButton"
     $( '#addEmployeeButton' ).on( 'click', addEmployee );
     $(document).on('click', '.removeEmployeeBtn', onRemove);
+    displayEmployees();
 }
 
 function onRemove(){
     console.log('in onRemove')
     $(this).closest('tr').remove();
 };
+
+
+function displayEmployees(){
+    console.log( 'in displayEmployees' );
+    // target a tr element on DOM
+    let el = $( '#employeesOut' );
+    // empty el
+    el.empty();
+    // loop through inventory
+    for( let i=0; i<employees.length; i++ ){
+        // append each item to the ul 
+        el.append( `
+        <td>${ employees[i].firstName }</td>
+        <td>${ employees[i].lastName }</td>
+        <td>${ employees[i].id }</td>
+        <td>${ employees[i].jobTitle }</td>
+        <td>${ employees[i].annualSalary }</td>
+        ` );
+    } // end for
+    calculateTotalCosts();
+} // end displayInventory

@@ -5,3 +5,7 @@ td {
 .red {
     background: red;
 }
+
+#employeesOut {
+    text-align: center;
+}
