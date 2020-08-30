@@ -56,7 +56,7 @@ function addEmployee(){
     <td><button class='removeEmployeeBtn'>Delete</button></td>
     </tr>
     `)
-    setEmployeeAnnualSalaryData();
+    //setEmployeeAnnualSalaryData();
     emptyInputs();
     calculateTotalCosts();
 } // end addEmployee
@@ -122,22 +122,16 @@ function onReady(){
 
 function onRemove(){
     console.log('in onRemove')
+    //subtractEmployeeSalaryFromTotal();
+    //$(this).closest('tr').remove();
+    $(this).parent().parent().remove(); //this works the same way as .parent().parent()etc
     subtractEmployeeSalaryFromTotal();
-    $(this).closest('tr').remove();
 } // end onRemove
-
-function setEmployeeAnnualSalaryData(){
-    console.log('in getEmployeeAnnualSalaryData');
-    // Here data is setting the data td element
-    // let annualSalary = $(".annualSalary").data("annualEmployeeSalary", newEmployee.annualSalary)
-    // console.log(`annualSalary:`, annualSalary)
-   // subtractEmployeeSalaryFromTotal();
-} // end getEmployeeAnnualSalaryData
 
 
 function subtractEmployeeSalaryFromTotal(){
     console.log('in subtractEmployeeSalaryFromTotal'); 
-    // target/GET THIS employee data 
+    // target/GET THIS employee annual salary data cell or class name??
     //subtract emplyoee salary from monthly total
     //monthlyTotal -= (employeeSalary / 12)
 } // end subtractEmployeeSalaryFromTotal
