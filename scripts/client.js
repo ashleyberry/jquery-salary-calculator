@@ -132,5 +132,8 @@ function onRemove(){
     let el = $( '#totalMonthly' );
     el.empty();
     el.append((monthlyTotal).toFixed(2));
+    if (monthlyTotal < 20000) {
+        $('#totalMonthly').removeClass('red');
+    }
     $(this).parent().parent().remove();
 } // end onRemove
