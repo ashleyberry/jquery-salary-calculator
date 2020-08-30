@@ -3,34 +3,54 @@ $( document ).ready( onReady );
 //globals
 let employees = [
     {
-        firstName: 'Leslie',
-        lastName: 'Knope',
-        id: '13',
-        jobTitle: 'Deputy Director',
-        annualSalary: 46931
-    },
-
-    {
         firstName: 'Ron',
         lastName: 'Swanson',
-        id: '27',
+        id: '278',
         jobTitle: 'Director',
         annualSalary: 60425
     },
     {
-        firstName: 'Donna',
-        lastName: 'Meagle',
-        id: '87',
-        jobTitle: 'Office Manager',
-        annualSalary: 79458
+        firstName: 'Leslie',
+        lastName: 'Knope',
+        id: '577',
+        jobTitle: 'Deputy Director',
+        annualSalary: 46931
     },
     {
-        firstName: 'Chris',
-        lastName: 'Traeger',
-        id: '344',
-        jobTitle: 'City Manager',
-        annualSalary: 92183
-    }
+        firstName: 'Donna',
+        lastName: 'Meagle',
+        id: '235',
+        jobTitle: 'Office Manager',
+        annualSalary: 53000
+    },
+    {
+        firstName: 'Ann',
+        lastName: 'Perkins',
+        id: '1284',
+        jobTitle: 'Public Relations Director',
+        annualSalary: 40000
+    },
+    {
+        firstName: 'Tom',
+        lastName: 'Haverford',
+        id: '679',
+        jobTitle: 'Business Liaison',
+        annualSalary: 55384
+    },
+    {
+        firstName: 'Gary',
+        lastName: 'Gergich',
+        id: '395',
+        jobTitle: 'Office Manager',
+        annualSalary: 52000
+    },
+    {
+        firstName: 'April',
+        lastName: 'Ludgate-Dwyer',
+        id: '812',
+        jobTitle: 'Assistant to the Director',
+        annualSalary: 35671
+    },
 ];
 let monthlyTotal = 0;
 
@@ -100,7 +120,6 @@ function displayEmployees(){
         <td><button class='removeEmployeeBtn'>Delete</button></td></tr>
         ` );
     } // end for
-    //setEmployeeAnnualSalaryData();
     calculateTotalCosts();
 } // end displayEmployees
 
@@ -122,18 +141,21 @@ function onReady(){
 
 function onRemove(){
     console.log('in onRemove')
-    //subtractEmployeeSalaryFromTotal();
-    //$(this).closest('tr').remove();
+    // target table row
     let tr = $(this).parent().parent();
+    // target text in salary
     let annualSalary = tr.children('.annualSalary').text();
+    // math stuff
     let monthlySalary = (Number(annualSalary / 12)).toFixed(2);
-    console.log('monthlySalary:', monthlySalary)
+    // remove salary from total
     monthlyTotal-=monthlySalary
+    // update DOM
     let el = $( '#totalMonthly' );
     el.empty();
     el.append((monthlyTotal).toFixed(2));
     if (monthlyTotal < 20000) {
         $('#totalMonthly').removeClass('red');
     }
+    // peace out employee
     $(this).parent().parent().remove();
 } // end onRemove

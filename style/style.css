@@ -9,12 +9,22 @@
 h1 {
     text-align: center;
 }
-.headerImage {
-    text-align: center;
+.center {
+    width: 30%;
 }
 
 #headerList {
     background: white
+}
+
+.imageContainer {
+    text-align: center;
+}
+
+.left {
+    position: absolute; 
+    right: 20px;
+    width: 10%;
 }
 
 .red {
