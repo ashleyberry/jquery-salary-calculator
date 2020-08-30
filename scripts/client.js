@@ -124,14 +124,13 @@ function onRemove(){
     console.log('in onRemove')
     //subtractEmployeeSalaryFromTotal();
     //$(this).closest('tr').remove();
-    $(this).parent().parent().remove(); //this works the same way as .parent().parent()etc
-    subtractEmployeeSalaryFromTotal();
+    let tr = $(this).parent().parent();
+    let annualSalary = tr.children('.annualSalary').text();
+    let monthlySalary = (Number(annualSalary / 12)).toFixed(2);
+    console.log('monthlySalary:', monthlySalary)
+    monthlyTotal-=monthlySalary
+    let el = $( '#totalMonthly' );
+    el.empty();
+    el.append((monthlyTotal).toFixed(2));
+    $(this).parent().parent().remove();
 } // end onRemove
-
-
-function subtractEmployeeSalaryFromTotal(){
-    console.log('in subtractEmployeeSalaryFromTotal'); 
-    // target/GET THIS employee annual salary data cell or class name??
-    //subtract emplyoee salary from monthly total
-    //monthlyTotal -= (employeeSalary / 12)
-} // end subtractEmployeeSalaryFromTotal
