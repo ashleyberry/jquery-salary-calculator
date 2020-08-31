@@ -52,22 +52,16 @@ function onRemove(){
     console.log('in onRemove')
     // peace out employee
     $(this).parent().parent().remove();
-    /*
-    // target table row
-    let tr = $(this).parent().parent();
-    // target text in salary
-    let annualSalary = tr.children('.annualSalary').text();
-    // math stuff
-    let monthlySalary = (annualSalary / 12);
-    // remove salary from total
-    monthlyTotal-=monthlySalary
+    let salaryTd = $(this).parent().siblings('.annualSalary')
+    let employeeSalary = Number(salaryTd.text())
+    let monthlySalary = (employeeSalary / 12)
+    totalMonthlyCosts -= monthlySalary
     // update DOM
     let el = $( '#totalMonthly' );
     el.empty();
-    el.append((monthlyTotal).toFixed(2));
-    if (monthlyTotal < 20000) {
+    el.append((totalMonthlyCosts).toFixed(2));
+    if (totalMonthlyCosts < 20000) {
         $('#totalMonthly').removeClass('red');
-    }
-    */
+    } // end conditional
     } // end onRemove
 } // end onAddEmployee
